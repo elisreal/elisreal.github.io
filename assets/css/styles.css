@@ -1,0 +1,105 @@
+body.mainBody {
+	background-image: url("../images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: fill;
+}
+
+.container {
+	margin-right: 30%;
+	margin-left:0;
+	padding: 20px;
+}
+
+button#start {
+	background: transparent;
+	border-style: none;
+	padding-top: 20%;
+}
+
+.startButton {
+	width: 600px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clickPlay {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+img.logo {
+	width: 300px;
+}
+
+p {
+	font-family: "Work Sans", sans-serif;
+	line-height: 1.5;
+}
+
+.keyboard {
+	font-family: "Work Sans", sans-serif;
+	font-size: 2rem;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20%;
+}
+
+div.col-lg-12.keyboard.text-center {
+	display: table;
+}
+
+.keys {
+	padding: 5px;
+	background-color: #FFFFFF;
+	margin: 5px;
+	text-align: center;
+	text-decoration: none;
+}
+
+a.keys {
+	display: inline-block;
+	margin: 0 auto;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+a.keys:hover {
+	background-color: #C0C0C0;
+	color: #696969;
+}
+
+
+h1 {
+	font-family: "Work Sans", sans-serif;
+	font-weight: 900;
+	font-size: 2rem;
+}
+
+h1#wordHere {
+	letter-spacing: 4px;
+	padding-top: 40px;
+}
+
+h2 {
+	font-family: "Work Sans", sans-serif;
+	font-size: 1.5rem;
+}
+
+span#lives, #numLetters, #score {
+	font-weight: bolder;
+}
+
+div#letters {
+	display: table-row;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.btn-success {
+	font-family: "Work Sans", sans-serif;
+	background-color: #0074D9;
+	border-style: none;
+	border-radius:0;
+}

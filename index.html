@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>The Office: The Game</title>
+		
+		<!-- Viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale = 1">
+
+		<!-- The Office Theme Music -->
+		<audio id="myAudio">
+  		<source src="assets/sounds/TheOffice.mp3" type="audio/mpeg">
+  		</audio>
+		
+		<!-- googleFonts -->
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+		<!-- My reset -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		
+		<!-- My CSS -->
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+	</head>
+
+
+	<body class="mainBody"> 
+
+		<div class="container">
+			<div class="row container" id="openScreen">
+				<div class="col-lg-12 text-center">
+					<button id="start">
+					<img class="startButton" src="assets/images/logo.png" alt="logo">
+					</button>
+					<h1 class="clickPlay">Click to Play</h1>
+					<p>Guess The Office phrase to get points, but be careful.</p>
+					<p>If you guess wrong 6 times, You Lose!</p>
+				</div>
+			</div>
+
+				<!-- A centered header image will go here -->
+				<div class="row container" id="header">
+					<div class="col-lg-12 text-center">
+						<img class="logo" src="assets/images/logo.png" alt="logo">
+						</div>
+					</div>
+				</div>
+				
+			<div id="playArea">
+
+				<!-- Question or Clue -->
+				<div class="row container">
+					<div class="col-lg-12 text-center">
+						<p>Use the alphabet below to guess the phrase. </p>
+						<h2>There are <span id="numLetters"><strong>0</strong></span> letters in this phrase.</h2>
+						<h1 id="wordHere">_______</h1>
+					</div> 
+				</div>
+
+          		<!-- Dwight's Bobblehead (split into 4 segments representing the 4 misses you are allowed.) -->
+				
+				<div class="row">
+					<div id="bobblehead-sprite"></div>
+				</div>
+
+
+				<!-- Keyboard Here -->
+				<div class="row container">
+					<div class="col-lg-12 keyboard text-center">
+						<div id="letters">
+	                		<a class="keys" id="a">A</a>
+	                		<a class="keys" id="b">B</a>
+                			<a class="keys" id="c">C</a>
+                			<a class="keys" id="d">D</a>
+                			<a class="keys" id="e">E</a>
+                			<a class="keys" id="f">F</a>
+                			<a class="keys" id="g">G</a>
+                			<a class="keys" id="h">H</a>
+                			<a class="keys" id="i">I</a>
+                			<a class="keys" id="j">J</a>
+                			<a class="keys" id="k">K</a>
+                			<a class="keys" id="l">L</a>
+                			<a class="keys" id="m">M</a>
+                		</div>
+                		<div id="letters">
+                			<a class="keys" id="n">N</a>
+                			<a class="keys" id="o">O</a>
+                			<a class="keys" id="p">P</a>
+                			<a class="keys" id="q">Q</a>
+                			<a class="keys" id="r">R</a>
+                			<a class="keys" id="s">S</a>
+                			<a class="keys" id="t">T</a>
+                			<a class="keys" id="u">U</a>
+                			<a class="keys" id="v">V</a>
+                			<a class="keys" id="w">W</a>
+                			<a class="keys" id="x">X</a>
+                			<a class="keys" id="y">Y</a>
+                			<a class="keys" id="z">Z</a>
+        				</div>
+					</div>
+				</div>
+
+				<!-- Lives Here -->
+				<div class="scoreArea">
+					<div class="row container">
+						<div class="col-lg-12 text-center">
+							<div class="chances left">
+								<h2 class="numbers"><span id="lives">6</span></h2>
+								<h2>LIVES LEFT</h2> 
+							</div>
+						</div>
+					</div>
+					<div class="row container">
+						<div class="col-lg-12 text-center">
+							<div class="score">
+								<h2 class="numbers"><span id="score">0</span></h2>
+								<h2>SCORE</h2> 
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Play Again Button -->
+				<div class="row container">
+					<div class="col-lg-12 text-center">
+            			<button class="btn btn-lg btn-success" id="play-again"
+            			onClick="clearWord(); main.pullWord(); main.setUnderline(); main.updateLetter(' '); music.pause();">Next Phrase</button>
+            		</div>
+          		</div>
+			</div>
+		</div>
+	
+
+
+	<!-- Bootstrap and jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <!-- My JS -->
+	<script type="text/javascript" src="assets/js/words.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+	<script type="text/javascript" src="assets/js/clickLetter.js"></script>
+
+	</body>
+</html>
